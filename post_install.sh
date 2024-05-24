@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install additional packages
-# neovim chezmoi hyprland hyprlock git base-devel rustup meson cmake cpio lazygit
+# neovim chezmoi hyprland hyprlock git base-devel rustup meson cmake cpio lazygit ttf-hack alacritty
 
 # setup paru
 
