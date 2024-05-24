@@ -71,6 +71,7 @@ sudo pacman -S --noconfirm --needed \
 
 # network manager set dns to 1.1.1.1 and 9.9.9.9
 
+# TODO: figure out a way to run this on every boot but only once (bash_profile? hyprland hook?)
 # xhost + local:
 
 # install neovim config
