@@ -40,7 +40,8 @@ sudo pacman -S --noconfirm --needed \
     qemu-base \
     ffmpeg \
     lua-language-server \
-    pavucontrol
+    pavucontrol \
+    xdg-desktop-portal-hyprland
 
 # TODO (only needed) install fonts: ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-mono
 
