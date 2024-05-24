@@ -74,4 +74,6 @@ sudo pacman -S --noconfirm --needed \
 # TODO: figure out a way to run this on every boot but only once (bash_profile? hyprland hook?)
 # xhost + local:
 
+# setup swapfile
+
 # install neovim config
