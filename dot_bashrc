@@ -11,23 +11,64 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
+
+export PATH="$PATH:~/Repos/nspawn-registry/"
 
 export EDITOR="nvim"
-alias vim='nvim'
-alias v='nvim'
-alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
+alias vim="nvim"
+alias v="nvim"
+alias vi="nvim --noplugin -u /etc/xdg/nvim/sysinit.vim"
 
-alias cp='cp -i' # confirm before overwriting something
+alias cp="cp -i" # confirm before overwriting something
 alias more=less
-alias ls='ls --color=auto'
-alias l='ls --color=auto'
-alias ll='ls -lah --color=auto'
-alias c='cd'
-alias ip='ip --color=auto'
-alias sudo='sudo ' # this makes the aliases work with sudo (for some reason)
-alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
-alias pyserv='python3 -m http.server 8080'
-alias up='paru; flatpak update; rustup update'
+alias ls="ls --color=auto"
+alias l="ls --color=auto"
+alias ll="ls -lah --color=auto"
+alias c="cd"
+alias ip="ip --color=auto"
+alias sudo="sudo " # this makes the aliases work with sudo (for some reason)
+alias cachec="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+alias pyserv="python3 -m http.server 8080"
+alias up="paru; flatpak update; rustup update"
+alias dots="chezmoi"
+alias alpvm="sudo systemd-nspawn -q -x -D ~/Files/Containers/alpine";
+alias gamingcont="sudo systemd-nspawn -q -D ~/Files/Containers/gaming -E DISPLAY=:0 -E XDG_RUNTIME_DIR=/run/user/1000 --bind=/dev/input --bind=/dev/dri --bind=/dev/shm --bind=/run/dbus/system_bus_socket --bind=/tmp/.X11-unix --bind=/dev/snd -E PULSE_SERVER=unix:/run/user/1000/pulse/native --bind=/run/user/1000 --bind=/home/dvdarch/.config/pulse/cookie:/home/gamer/.config/pulse/cookie --property=DeviceAllow='/dev/dri/renderD128' --bind=/etc/machine-id" # -u gamer
+
+mnt() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: mnt <device> <mount_directory_name>"
+        return 1
+    fi
+
+    DEVICE=$1
+    MOUNT_DIR=$2
+
+    if [ -z "$MOUNT_DIR" ]; then
+        MOUNT_DIR=$(echo $RANDOM | md5sum | head -c 20)
+    fi
+
+    MOUNT_PATH="/run/media/$USER/$MOUNT_DIR"
+
+    # Create the mount directory if it does not exist
+    if [ ! -d "$MOUNT_PATH" ]; then
+        sudo mkdir -p "$MOUNT_PATH"
+    fi
+
+    # Mount the device
+    sudo mount "$DEVICE" "$MOUNT_PATH"
+
+    # Check if the mount was successful
+    if [ $? -eq 0 ]; then
+        echo "Successfully mounted $DEVICE to $MOUNT_PATH"
+        echo "Press enter to umount..."
+    else
+        echo "Failed to mount $DEVICE"
+        return 1
+    fi
+
+    read && sudo umount "$MOUNT_PATH" && sudo rmdir "$MOUNT_PATH" && echo "Successfully umounted $DEVICE"
+}
 
 shopt -s checkwinsize
 shopt -s expand_aliases
