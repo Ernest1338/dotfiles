@@ -34,7 +34,7 @@
     "height": 24,
     "hyprland/language": {
       "format": "   {1}",
-      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+      "on-click": "hyprctl switchxkblayout hid-04b4:6014 next"
     },
     "hyprland/workspaces": {
       "persistent-workspaces": {

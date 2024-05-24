@@ -7,17 +7,16 @@
 - - Disk encryption: NONE
 - - Bootloader: Grub
 - - Swap (will create after): False
-- - Hostname: dvdarch
+- - Hostname: archlinux
 - - Root password: REDACTED
 - - User account: REDACTED (sudoer)
 - - Profile: Minimal
 - - Audio: Pipewire
 - - Kernels: Linux
-- - Additional packages: `neovim chezmoi`
+- - Additional packages: `curl`
 - - Network configuration: Use NetworkManager
 - - Timezone: Europe/Warsaw
 - - NTP: True
-- post install script
-- chezmoi init https://github.com/Ernest1338/dotfiles.git
+- post install script: `curl TODO | sh`
 
 
