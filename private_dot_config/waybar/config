@@ -1,5 +1,25 @@
 [
   {
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+      "custom/suspend",
+      "custom/picker",
+      "network",
+      "hyprland/language",
+      "pulseaudio",
+      "backlight",
+      "battery",
+      "clock"
+    ],
+    "layer": "overlay",
+    "height": 24,
+    "position": "bottom",
+    "output": [
+      "DP-1"
+    ],
     "backlight": {
       "format": "   {}%",
       "on-scroll-down": "brightnessctl set 1%-",
@@ -17,7 +37,7 @@
     },
     "clock": {
       "format": "  {:%d/%m     %H:%M}",
-      "on-click": "alacritty -e bash -c 'cal $(date +%Y); read'"
+      "on-click": "alacritty -e bash -c 'cal $(date +%Y) -m; read'"
     },
     "cpu": {
       "format": "   {1}%",
@@ -31,7 +51,6 @@
       "format": " ",
       "on-click": "systemctl suspend && hyprlock --immediate"
     },
-    "height": 24,
     "hyprland/language": {
       "format": "   {1}",
       "on-click": "hyprctl switchxkblayout hid-04b4:6014 next"
@@ -41,35 +60,16 @@
         "*": 10
       }
     },
-    "layer": "top",
     "memory": {
       "format": "   {0}%",
       "on-click": "alacritty -e bash -c 'htop -s PERCENT_MEM'"
     },
-    "modules-center": [],
-    "modules-left": [
-      "hyprland/workspaces"
-    ],
-    "modules-right": [
-      "custom/suspend",
-      "custom/picker",
-      "network",
-      "hyprland/language",
-      "pulseaudio",
-      "backlight",
-      "battery",
-      "clock"
-    ],
     "network": {
       "format-disconnected": " ",
       "format-ethernet": " ",
       "format-wifi": " ",
       "on-click": "alacritty -e bash -c 'nmtui'"
     },
-    "output": [
-      "DP-1"
-    ],
-    "position": "bottom",
     "power-profiles-daemon": {
       "format": "   {}"
     },
