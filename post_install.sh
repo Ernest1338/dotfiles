@@ -95,10 +95,10 @@ echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo swapon /swapfile
 
 # on laptop only
-read -p "Are you want to apply laptop settings? " -n 1 -r
+read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    paru -S brightnessctl tlp
+    paru -S --noconfirm brightnessctl tlp
     sudo systemctl enable --now tlp
     # write tlp config > /etc/tlp.conf
     echo "
@@ -113,7 +113,7 @@ CPU_SCALING_GOVERNOR_ON_BAT=powersave
 " | sudo tee /etc/tlp.conf
 fi
 
-read -p "Do you want to reboot? " -n 1 -r
+read -p "Do you want to reboot? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     reboot

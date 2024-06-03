@@ -17,6 +17,7 @@
 - - Network configuration: Use NetworkManager
 - - Timezone: Europe/Warsaw
 - - NTP: True
-- post install script: `curl https://raw.githubusercontent.com/Ernest1338/dotfiles/main/post_install.sh | sh`
-
-
+- post install script:
+```bash
+curl -o post_install.sh https://raw.githubusercontent.com/Ernest1338/dotfiles/main/post_install.sh && bash post_install.sh && rm post_install.sh
+```
