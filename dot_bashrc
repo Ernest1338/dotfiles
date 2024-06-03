@@ -73,5 +73,3 @@ mnt() {
 shopt -s checkwinsize
 shopt -s expand_aliases
 shopt -s histappend
-
-source "$HOME"/.cargo/env
