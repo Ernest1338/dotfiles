@@ -78,7 +78,7 @@ rustup install nightly
 rustup component add rust-analyzer
 
 # install neovim config
-git clone https://github.com/Ernest1338/nvim ~/.config/nvim && nvim +q
+git clone https://github.com/Ernest1338/nvim ~/.config/nvim && nvim +q!
 
 # network manager set dns to 1.1.1.1 and 9.9.9.9
 nmcli -g name,type connection  show  --active | awk -F: '/ethernet|wireless/ { print $1 }' | while read connection
