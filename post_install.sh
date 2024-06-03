@@ -98,15 +98,18 @@ sudo swapon /swapfile
 read -p "Are you want to apply laptop settings? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    paru -S brightnessctl tlp
     # write tlp config > /etc/tlp.conf
-    # CPU_ENERGY_PERF_POLICY_ON_AC=performance
-    # CPU_ENERGY_PERF_POLICY_ON_BAT=power
-    # CPU_MAX_PERF_ON_AC=100
-    # CPU_MAX_PERF_ON_BAT=20
-    # CPU_MIN_PERF_ON_AC=0
-    # CPU_MIN_PERF_ON_BAT=0
-    # CPU_SCALING_GOVERNOR_ON_AC=performance
-    # CPU_SCALING_GOVERNOR_ON_BAT=powersave
+    echo "
+CPU_ENERGY_PERF_POLICY_ON_AC=performance
+CPU_ENERGY_PERF_POLICY_ON_BAT=power
+CPU_MAX_PERF_ON_AC=100
+CPU_MAX_PERF_ON_BAT=20
+CPU_MIN_PERF_ON_AC=0
+CPU_MIN_PERF_ON_BAT=0
+CPU_SCALING_GOVERNOR_ON_AC=performance
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+" | sudo tee /etc/tlp.conf
 fi
 
 read -p "Do you want to reboot? " -n 1 -r
