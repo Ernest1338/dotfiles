@@ -99,6 +99,7 @@ read -p "Are you want to apply laptop settings? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     paru -S brightnessctl tlp
+    sudo systemctl enable --now tlp
     # write tlp config > /etc/tlp.conf
     echo "
 CPU_ENERGY_PERF_POLICY_ON_AC=performance
