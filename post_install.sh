@@ -26,7 +26,6 @@ sudo pacman -Syyu --noconfirm --needed \
     ly \
     i2c-tools \
     wget \
-    curl \
     htop \
     ripgrep \
     fd \
@@ -72,7 +71,7 @@ git config --global user.name "Ernest Gupik"
 
 # enable services
 systemctl --user enable --now mako
-systemctl enable ly
+sudo systemctl enable ly
 
 # setup rust
 rustup install nightly
@@ -91,9 +90,9 @@ do
 done
 
 # setup swapfile (ask for size?)
-mkswap -U clear --size 8G --file /swapfile
-echo "/swapfile none swap defaults 0 0" >> /etc/fstab
-swapon /swapfile
+sudo mkswap -U clear --size 8G --file /swapfile
+echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
+sudo swapon /swapfile
 
 # on laptop only
 read -p "Are you want to apply laptop settings? " -n 1 -r
