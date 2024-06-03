@@ -5,7 +5,7 @@ set -euo pipefail
 # think of using btrfs and creating a snapshot on every update to achive nixos like system resilience
 
 # install additional packages
-sudo pacman -S --noconfirm --needed \
+sudo pacman -Syyu --noconfirm --needed \
     neovim \
     chezmoi \
     neovim \
