@@ -110,9 +110,3 @@ CPU_SCALING_GOVERNOR_ON_AC=performance
 CPU_SCALING_GOVERNOR_ON_BAT=powersave
 " | sudo tee /etc/tlp.conf
 fi
-
-read -p "Do you want to reboot? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    reboot
-fi
