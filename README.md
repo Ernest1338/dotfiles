@@ -17,7 +17,7 @@
 - - Network configuration: Use NetworkManager
 - - Timezone: Europe/Warsaw
 - - NTP: True
-- post install script:
+- post install step:
 ```bash
-curl -o post_install.sh https://raw.githubusercontent.com/Ernest1338/dotfiles/main/post_install.sh && bash post_install.sh && rm post_install.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Ernest1338
 ```

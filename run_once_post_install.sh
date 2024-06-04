@@ -7,9 +7,6 @@ set -euo pipefail
 # install additional packages
 sudo pacman -Syyu --noconfirm --needed \
     neovim \
-    chezmoi \
-    neovim \
-    chezmoi \
     hyprland \
     hyprlock \
     git \
@@ -59,10 +56,6 @@ wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | g
 
 # install packages from AUR
 paru -S --noconfirm brave-bin hyprpicker
-
-# setup dotfiles
-chezmoi init https://github.com/Ernest1338/dotfiles.git
-chezmoi apply
 
 # setup git
 git config --global credential.helper store
