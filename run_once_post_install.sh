@@ -55,7 +55,7 @@ wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | g
     rm -rf /tmp/paru*
 
 # install packages from AUR
-paru -S --noconfirm brave-bin hyprpicker
+paru -S --noconfirm --needed brave-bin hyprpicker
 
 # setup git
 git config --global credential.helper store
