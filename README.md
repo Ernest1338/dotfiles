@@ -19,5 +19,5 @@
 - - NTP: True
 - post install step:
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Ernest1338
+sudo pacman -Syyu chezmoi && chezmoi init --apply Ernest1338
 ```
