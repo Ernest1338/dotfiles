@@ -19,5 +19,5 @@
 - - NTP: True
 - post install step:
 ```bash
-sudo pacman -Syyu --noconfirm chezmoi && chezmoi init --apply Ernest1338
+curl https://raw.githubusercontent.com/Ernest1338/dotfiles/main/post_install.sh | sh
 ```

@@ -7,6 +7,7 @@ set -euo pipefail
 # install additional packages
 sudo pacman -Syyu --noconfirm --needed \
     neovim \
+    chezmoi \
     hyprland \
     hyprlock \
     git \
@@ -86,6 +87,10 @@ done
 sudo mkswap -U clear --size 8G --file /swapfile
 echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo swapon /swapfile
+
+# setup dotfiles
+chezmoi init https://github.com/Ernest1338/dotfiles.git
+chezmoi apply
 
 # on laptop only
 read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
