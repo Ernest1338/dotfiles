@@ -30,7 +30,7 @@ alias ip="ip --color=auto"
 alias sudo="sudo " # this makes the aliases work with sudo (for some reason)
 alias cachec="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias pyserv="python3 -m http.server 8080"
-alias up="paru; flatpak update; rustup update"
+alias up="chezmoi update; paru; flatpak update; rustup update"
 alias dots="chezmoi"
 alias alpvm="sudo systemd-nspawn -q -x -D ~/Files/Containers/alpine";
 alias gamingcont="sudo systemd-nspawn -q -D ~/Files/Containers/gaming -E DISPLAY=:0 -E XDG_RUNTIME_DIR=/run/user/1000 --bind=/dev/input --bind=/dev/dri --bind=/dev/shm --bind=/run/dbus/system_bus_socket --bind=/tmp/.X11-unix --bind=/dev/snd -E PULSE_SERVER=unix:/run/user/1000/pulse/native --bind=/run/user/1000 --bind=/home/dvdarch/.config/pulse/cookie:/home/gamer/.config/pulse/cookie --property=DeviceAllow='/dev/dri/renderD128' --bind=/etc/machine-id" # -u gamer
