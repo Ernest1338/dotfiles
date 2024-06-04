@@ -19,5 +19,5 @@
 - - NTP: True
 - post install step:
 ```bash
-sudo pacman -Syyu chezmoi && chezmoi init --apply Ernest1338
+sudo pacman -Syyu --noconfirm chezmoi && chezmoi init --apply Ernest1338
 ```
