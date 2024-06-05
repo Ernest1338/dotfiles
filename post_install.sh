@@ -93,6 +93,10 @@ sudo swapon /swapfile
 chezmoi init https://github.com/Ernest1338/dotfiles.git
 chezmoi apply
 
+# make bash history work
+mkdir -p ~/.local/state/bash
+touch ~/.local/state/bash/history
+
 # on laptop only
 read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
 echo
