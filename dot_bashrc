@@ -56,7 +56,7 @@ mnt() {
     fi
 
     # Mount the device
-    sudo mount "$DEVICE" "$MOUNT_PATH"
+    sudo mount "$DEVICE" "$MOUNT_PATH" -o uid=1000,gid=1000,dmask=0022,fmask=133
 
     # Check if the mount was successful
     if [ $? -eq 0 ]; then
