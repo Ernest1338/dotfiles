@@ -1,3 +1,8 @@
+{{- $chassisType := "desktop" }}
+{{- if eq .chezmoi.os "linux" }}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+{{- end }}
+
 $menu = fuzzel
 $mod = ALT
 $screenshot = SCREENSHOT_PATH = "$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
@@ -128,6 +133,7 @@ bind = $mod SHIFT, 8, movetoworkspace, 8
 bind = $mod SHIFT, 9, movetoworkspace, 9
 bind = $mod SHIFT, 0, movetoworkspace, 10
 
+{{- if eq $chassisType "desktop" }}
 workspace = 1, monitor:HDMI-A-1,default:true
 workspace = 2, monitor:HDMI-A-1
 workspace = 3, monitor:HDMI-A-1
@@ -137,3 +143,4 @@ workspace = 6, monitor:DVI-D-2
 workspace = 7, monitor:DVI-D-2
 workspace = 8, monitor:DP-1,default:true
 workspace = 9, monitor:DP-1
+{{- end }}
