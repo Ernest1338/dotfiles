@@ -43,6 +43,7 @@ sudo pacman -Syyu --noconfirm --needed \
     ffmpeg \
     lua-language-server \
     pavucontrol \
+    gnu-netcat \
     xdg-desktop-portal-hyprland \
     ttf-nerd-fonts-symbols \
     ttf-nerd-fonts-symbols-common \
