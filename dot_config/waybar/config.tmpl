@@ -1,3 +1,7 @@
+{{- $chassisType := "desktop" }}
+{{- if eq .chezmoi.os "linux" }}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+{{- end }}
 [
   {
     "modules-left": [
@@ -17,9 +21,11 @@
     "layer": "overlay",
     "height": 24,
     "position": "bottom",
-    "output": [
-      "DP-1"
-    ],
+{{- if eq $chassisType "desktop" }}
+    "output": [ "DP-1" ],
+{{- else }}
+    "output": [ "LVDS-1" ],
+{{- end }}
     "backlight": {
       "format": "   {}%",
       "on-scroll-down": "brightnessctl set 1%-",
