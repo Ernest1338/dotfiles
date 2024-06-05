@@ -19,11 +19,11 @@
       "battery",
       "clock"
     ],
-    "layer": "overlay",
     "height": 24,
     "position": "bottom",
 {{- if eq $chassisType "desktop" }}
     "output": [ "DP-1" ],
+    "layer": "overlay",
 {{- else }}
     "output": [ "LVDS-1" ],
 {{- end }}
