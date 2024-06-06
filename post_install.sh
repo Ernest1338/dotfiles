@@ -79,15 +79,6 @@ rustup component add rust-analyzer
 # install neovim config
 git clone https://github.com/Ernest1338/nvim ~/.config/nvim
 
-# network manager set dns to 1.1.1.1 and 9.9.9.9
-nmcli -g name,type connection  show  --active | awk -F: '/ethernet|wireless/ { print $1 }' | while read connection
-do
-  nmcli con mod "$connection" ipv6.ignore-auto-dns yes
-  nmcli con mod "$connection" ipv4.ignore-auto-dns yes
-  nmcli con mod "$connection" ipv4.dns "1.1.1.1 9.9.9.9"
-  nmcli con down "$connection" && nmcli con up "$connection"
-done
-
 # setup swapfile (ask for size?)
 sudo mkswap -U clear --size 8G --file /swapfile
 echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
@@ -100,6 +91,15 @@ chezmoi apply
 # make bash history work
 mkdir -p ~/.local/state/bash
 touch ~/.local/state/bash/history
+
+# network manager set dns to 1.1.1.1 and 9.9.9.9
+nmcli -g name,type connection  show  --active | awk -F: '/ethernet|wireless/ { print $1 }' | while read connection
+do
+  nmcli con mod "$connection" ipv6.ignore-auto-dns yes
+  nmcli con mod "$connection" ipv4.ignore-auto-dns yes
+  nmcli con mod "$connection" ipv4.dns "1.1.1.1 9.9.9.9"
+  nmcli con down "$connection" && nmcli con up "$connection"
+done
 
 # on laptop only
 read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
