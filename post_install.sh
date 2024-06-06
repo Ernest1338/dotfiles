@@ -17,7 +17,6 @@ sudo pacman -Syyu --noconfirm --needed \
     cmake \
     cpio \
     lazygit \
-    ttf-hack \
     alacritty \
     imv \
     mpv \
@@ -45,9 +44,11 @@ sudo pacman -Syyu --noconfirm --needed \
     pavucontrol \
     gnu-netcat \
     xdg-desktop-portal-hyprland \
+    ttf-hack \
     ttf-nerd-fonts-symbols \
     ttf-nerd-fonts-symbols-common \
     ttf-nerd-fonts-symbols-mono \
+    noto-fonts-emoji \
     polkit-gnome \
     hypridle
 
