@@ -72,10 +72,11 @@
       "on-click": "alacritty -e bash -c 'htop -s PERCENT_MEM'"
     },
     "network": {
-      "format-disconnected": " ",
+      "format-disconnected": "❌ ",
       "format-ethernet": " ",
       "format-wifi": " ",
-      "on-click": "alacritty -e bash -c 'nmtui'"
+      "on-click": "alacritty -e bash -c 'nmtui'",
+      "on-click-right": "nmcli dev wifi rescan"
     },
     "power-profiles-daemon": {
       "format": "   {}"
