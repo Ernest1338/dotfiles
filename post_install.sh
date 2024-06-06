@@ -48,6 +48,7 @@ sudo pacman -Syyu --noconfirm --needed \
     ttf-nerd-fonts-symbols \
     ttf-nerd-fonts-symbols-common \
     ttf-nerd-fonts-symbols-mono \
+    noto-fonts \
     noto-fonts-emoji \
     polkit-gnome \
     hypridle
