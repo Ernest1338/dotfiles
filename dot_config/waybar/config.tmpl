@@ -60,7 +60,11 @@
     },
     "hyprland/language": {
       "format": "   {1}",
+{{- if eq $chassisType "desktop" }}
       "on-click": "hyprctl switchxkblayout hid-04b4:6014 next"
+{{- else }}
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+{{- end }}
     },
     "hyprland/workspaces": {
       "persistent-workspaces": {
@@ -84,7 +88,8 @@
     "pulseaudio": {
       "format": "   {1}%",
       "on-click": "current=$(pactl list sinks | grep 'Active Port:' | grep 'analog' | cut -d' ' -f3)\nif [[ $current == \"analog-output-lineout\" ]]; then\n    pactl set-sink-port 0 analog-output-headphones\nelif [[ $current == \"analog-output-headphones\" ]]; then\n    pactl set-sink-port 0 analog-output-lineout\nfi\n",
-      "on-click-right": "pavucontrol"
+      "on-click-right": "pavucontrol",
+      "on-click-middle": "pactl set-sink-mute $(pactl get-default-sink) toggle"
     }
   }
 ]
