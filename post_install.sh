@@ -47,7 +47,9 @@ sudo pacman -Syyu --noconfirm --needed \
     xdg-desktop-portal-hyprland \
     ttf-nerd-fonts-symbols \
     ttf-nerd-fonts-symbols-common \
-    ttf-nerd-fonts-symbols-mono
+    ttf-nerd-fonts-symbols-mono \
+    polkit-gnome \
+    hypridle
 
 # setup paru
 wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep x86_64 | head -1) -O /tmp/paru.tar.zst &&
