@@ -15,7 +15,8 @@
       "custom/notes",
       "network",
       "hyprland/language",
-      "pulseaudio",
+      "pulseaudio#microphone",
+      "pulseaudio#audio",
       "backlight",
       "battery",
       "clock"
@@ -90,14 +91,17 @@
     "power-profiles-daemon": {
       "format": "   {}"
     },
-    "pulseaudio": {
-      "format": "{format_source}         {1}%",
+    "pulseaudio#audio": {
+      "format": "   {1}%",
       "on-click": "current=$(pactl list sinks | grep 'Active Port:' | grep 'analog' | cut -d' ' -f3)\nif [[ $current == \"analog-output-lineout\" ]]; then\n    pactl set-sink-port 0 analog-output-headphones\nelif [[ $current == \"analog-output-headphones\" ]]; then\n    pactl set-sink-port 0 analog-output-lineout\nfi\n",
       "on-click-right": "pavucontrol",
       "on-click-middle": "pactl set-sink-mute $(pactl get-default-sink) toggle",
-      "format-source": " ",
-      "format-source-muted": " "
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "on-click": "pactl set-source-mute $(pactl get-default-source) toggle",
+      "format-source": "  ",
+      "format-source-muted": ""
     }
-    // TODO: microphone mute button
   }
 ]

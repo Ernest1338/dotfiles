@@ -217,7 +217,7 @@ label:focus {
     background: transparent;
 }
 
-#pulseaudio.muted {
+#pulseaudio.audio.muted {
     color: #f53c3c;
 }
 
