@@ -25,3 +25,7 @@
 curl -o post_install.sh https://raw.githubusercontent.com/Ernest1338/dotfiles/main/post_install.sh && bash post_install.sh && rm post_install.sh && reboot
 ```
 - - nspawn container setup (clone repo + pull images)
+
+# Notes
+
+- very optionally: mitigations=off
