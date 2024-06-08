@@ -39,6 +39,11 @@ sudo pacman -Syyu --noconfirm --needed \
     python-lsp-black \
     uv \
     qemu-base \
+    qemu-ui-gtk \
+    qemu-hw-display-virtio-gpu \
+    qemu-hw-display-virtio-gpu-gl \
+    qemu-hw-display-virtio-vga \
+    qemu-hw-display-virtio-vga-gl \
     ffmpeg \
     lua-language-server \
     pavucontrol \
