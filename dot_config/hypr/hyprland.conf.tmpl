@@ -8,6 +8,7 @@ $mod = ALT
 $screenshot = SCREENSHOT_PATH="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
 $terminal = alacritty
 
+# TODO: DOESNT WORK
 exec-once = xhost + local:
 exec-once = waybar
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
