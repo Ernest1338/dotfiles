@@ -14,12 +14,17 @@
       "custom/suspend",
       "custom/picker",
       "custom/notes",
+{{- if eq $chassisType "desktop" }}
+      "custom/vm",
+{{- end }}
       "network",
       "hyprland/language",
       "pulseaudio#microphone",
       "pulseaudio#audio",
+{{- if ne $chassisType "desktop" }}
       "backlight",
       "battery",
+{{- end }}
       "clock"
     ],
     "height": 24,
@@ -64,6 +69,10 @@
     "custom/notes": {
       "format": " ",
       "on-click": "alacritty --working-directory=$HOME/Repos/notes -e bash -c 'nvim 1.Notes/notes.md'"
+    },
+    "custom/vm": {
+      "format": " ",
+      "on-click": "pushd $HOME/Files/VMs && $HOME/Files/VMs/startvm.sh"
     },
     "hyprland/language": {
       "format": "   {1}",

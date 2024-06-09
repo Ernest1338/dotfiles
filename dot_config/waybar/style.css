@@ -59,6 +59,7 @@ button:hover {
 #battery:hover,
 #custom-suspend:hover,
 #custom-notes:hover,
+#custom-vm:hover,
 #custom-picker:hover {
     background: rgba(0, 0, 0, 0.2);
 }
@@ -117,6 +118,7 @@ button:hover {
 #custom-picker,
 #custom-suspend,
 #custom-notes,
+#custom-vm,
 #mpd {
     padding: 0 10px;
 }
