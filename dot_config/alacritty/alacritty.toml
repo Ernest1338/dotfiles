@@ -38,3 +38,8 @@ style = "Regular"
 
 [window]
 decorations = "none"
+
+[[keyboard.bindings]]
+key = "o"
+mods = "Alt"
+chars = "\u001b[A\r"
