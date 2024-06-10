@@ -56,7 +56,8 @@ sudo pacman -Syyu --noconfirm --needed \
     noto-fonts \
     noto-fonts-emoji \
     polkit-gnome \
-    hypridle
+    hypridle \
+    pacman-contrib
 
 # setup paru
 wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep x86_64 | head -1) -O /tmp/paru.tar.zst &&
