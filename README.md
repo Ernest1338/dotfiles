@@ -29,4 +29,5 @@ curl -o post_install.sh https://raw.githubusercontent.com/Ernest1338/dotfiles/ma
 # Notes
 
 - very optionally: mitigations=off
-- if audio switcher doesn't work: alsa-utils + alsamixer + auto-mute disable
+- if audio switcher doesn't work: `alsa-utils` + alsamixer + auto-mute disable
+- screen recording setup: `wf-recorder` + `libva-mesa-driver` + `screenrecord`
