@@ -58,7 +58,7 @@ input {
 misc {
     disable_splash_rendering = true
     force_default_wallpaper = 0
-    # middle_click_paste = false # TODO: once new version drops
+    middle_click_paste = false
 }
 
 monitor = DVI-D-2, 1920x1080@60, 0x60, 1
@@ -66,7 +66,7 @@ monitor = HDMI-A-1, 1920x1080@75, 1920x0, 1
 monitor = DP-1, 1440x900@75, 3840x100, 1
 
 bind = $mod Ctrl, T, exec, $terminal
-bind = $mod, Return, exec, $terminal
+# bind = $mod, Return, exec, $terminal
 bind = $mod Shift, Return, exec, $terminal
 bind = $mod, Q, killactive
 bind = $mod, M, exit
