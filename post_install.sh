@@ -107,6 +107,14 @@ do
   nmcli con down "$connection" && nmcli con up "$connection"
 done
 
+# setup some home directories
+mkdir ~/Downloads
+mkdir ~/Pictures
+mkdir ~/Videos
+
+# setup screenshots dir
+mkdir -p ~/Pictures/Screenshots
+
 # on laptop only
 read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
 echo
