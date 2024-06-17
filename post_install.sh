@@ -38,6 +38,7 @@ sudo pacman -Syyu --noconfirm --needed \
     python-lsp-server \
     python-lsp-black \
     uv \
+    unzip \
     qemu-base \
     qemu-ui-gtk \
     qemu-hw-display-virtio-gpu \
