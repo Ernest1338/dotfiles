@@ -13,7 +13,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
 
-export PATH="$PATH:~/Repos/nspawn-registry/"
+export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin"
 
 export EDITOR="nvim"
 alias vim="nvim"
