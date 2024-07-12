@@ -51,6 +51,7 @@ button:hover {
 
 #pulseaudio:hover,
 #network:hover,
+#bluetooth:hover,
 #cpu:hover,
 #memory:hover,
 #clock:hover,
@@ -105,6 +106,7 @@ button:hover {
 #temperature,
 #backlight,
 #network,
+#bluetooth,
 #pulseaudio,
 #wireplumber,
 #custom-media,
