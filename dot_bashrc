@@ -14,7 +14,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
 export GOPATH="$HOME/Programming/GoPath"
 
-export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin"
+export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.config/composer/vendor/bin"
 
 export EDITOR="nvim"
 alias vim="nvim"
