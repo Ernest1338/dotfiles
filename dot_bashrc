@@ -13,6 +13,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
 export GOPATH="$HOME/Programming/GoPath"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.config/composer/vendor/bin"
 

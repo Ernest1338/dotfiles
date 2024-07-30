@@ -1,0 +1,5 @@
+# Exclude directories.
+--glob=!{.git,.svn,node_modules}
+
+# Exclude file types.
+--iglob=!*.{~sql}
