@@ -71,11 +71,6 @@ wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | g
 # install packages from AUR
 paru -S --noconfirm --needed brave-bin hyprpicker
 
-# setup git
-git config --global credential.helper store
-git config --global user.email "ernestgupik@wp.pl"
-git config --global user.name "Ernest Gupik"
-
 # enable services
 systemctl --user enable --now mako
 sudo systemctl enable ly
