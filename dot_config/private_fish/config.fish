@@ -48,6 +48,9 @@ if status is-interactive
     set -g hydro_color_pwd "yellow"
     set -g hydro_color_git "green"
     set -g hydro_color_duration "brblue"
+    # set -g hydro_multiline true
+    # set -g fish_prompt_pwd_dir_length 0
+
     set -g vi_mode_color "blue"
 
     # fish_vi_key_bindings
