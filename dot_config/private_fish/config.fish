@@ -47,7 +47,7 @@ if status is-interactive
 
     set -g hydro_color_pwd "yellow"
     set -g hydro_color_git "green"
-    set -g hydro_color_duration "blue"
+    set -g hydro_color_duration "brblue"
     set -g vi_mode_color "blue"
 
     # fish_vi_key_bindings
