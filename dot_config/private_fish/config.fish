@@ -44,6 +44,13 @@ if status is-interactive
     bind \cj down-or-search
     bind \ch backward-word
     bind \cl forward-word
+
+    set -g hydro_color_pwd "yellow"
+    set -g hydro_color_git "green"
+    set -g hydro_color_duration "blue"
+    set -g vi_mode_color "blue"
+
+    # fish_vi_key_bindings
 end
 
 function screenrecord
