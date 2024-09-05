@@ -59,6 +59,7 @@ sudo pacman -Syyu --noconfirm --needed \
     noto-fonts-emoji \
     polkit-gnome \
     hypridle \
+    fish \
     pacman-contrib
 
 # setup paru
