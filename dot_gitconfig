@@ -9,12 +9,11 @@
     pager = delta
 
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --line-numbers
 
 [delta]
     navigate = true    # use n and N to move between diff sections
     dark = true
-    line-numbers = true
 
 [merge]
     conflictstyle = diff3
