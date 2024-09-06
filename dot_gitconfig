@@ -1,5 +1,23 @@
 [credential]
 	helper = store
+
 [user]
 	email = ernestgupik@wp.pl
 	name = Ernest Gupik
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    dark = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
