@@ -60,6 +60,7 @@ sudo pacman -Syyu --noconfirm --needed \
     polkit-gnome \
     hypridle \
     fish \
+    delta \
     pacman-contrib
 
 # setup paru
