@@ -32,7 +32,7 @@ if status is-interactive
     alias sudo="sudo " # this makes the aliases work with sudo (for some reason)
     alias cachec="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
     alias pyserv="python3 -m http.server 8080"
-    alias up="paru; chezmoi update; flatpak update; rustup update"
+    alias up="paru; chezmoi update; rustup update" # ; flatpak update
     alias dots="chezmoi"
     alias docker=podman
     alias alpvm="podman run --rm -it alpine";
