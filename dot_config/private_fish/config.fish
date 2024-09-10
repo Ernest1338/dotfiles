@@ -52,6 +52,7 @@ if status is-interactive
     set -g hydro_color_prompt "magenta"
     # set -g hydro_multiline true
     # set -g fish_prompt_pwd_dir_length 0
+    # TODO: change highlight color
 
     set -g vi_mode_color "blue"
 
