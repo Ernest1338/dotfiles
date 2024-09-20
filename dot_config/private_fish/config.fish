@@ -18,6 +18,7 @@ if status is-interactive
     set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
     set -gx PATH "$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.config/composer/vendor/bin"
     set -gx EDITOR "nvim"
+    set -gx SHELL "/bin/bash"
 
     alias vim="nvim"
     alias v="nvim"
