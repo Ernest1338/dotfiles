@@ -35,10 +35,10 @@ if status is-interactive
     alias pyserv="python3 -m http.server 8080"
     alias up="paru; chezmoi update; rustup update" # ; flatpak update
     alias dots="chezmoi"
-    alias docker=podman
-    alias alpvm="podman run --rm -it alpine";
-    alias gamingcont="podman run -it -e DISPLAY --ipc=host --device /dev/dri/card1 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /run/dbus/system_bus_socket:/run/dbus/system_bus_socket -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native -v $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged --name gaming_container archlinux"
-    alias archvm="podman run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card1 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /run/dbus/system_bus_socket:/run/dbus/system_bus_socket -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native -v $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux"
+    alias startdocker="sudo systemctl start docker"
+    alias alpvm="docker run --rm -it alpine";
+    alias gamingcont="docker run -it -e DISPLAY --ipc=host --device /dev/dri/card1 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /run/dbus/system_bus_socket:/run/dbus/system_bus_socket -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native -v $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged --name gaming_container archlinux"
+    alias archvm="docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card1 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /run/dbus/system_bus_socket:/run/dbus/system_bus_socket -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native -v $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux"
     alias hackingvm="pushd $HOME/Files/VMs && ./hackingvm.sh && popd"
     alias lg=lazygit
 
