@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ZAProxy
+Exec=zaproxy %F
+Terminal=false
+Type=Application
+Keywords=Web;Proxy;
+#Icon=/usr/share/zaproxy/zap.ico
+Categories=Utility;
+StartupNotify=false
