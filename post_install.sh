@@ -10,6 +10,7 @@ sudo pacman -Syyu --noconfirm --needed \
     chezmoi \
     hyprland \
     hyprlock \
+    hyprpicker \
     git \
     base-devel \
     rustup \
@@ -71,7 +72,7 @@ wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | g
     rm -rf /tmp/paru*
 
 # install packages from AUR
-paru -S --noconfirm --needed brave-bin hyprpicker
+paru -S --noconfirm --needed brave-bin
 
 # enable services
 systemctl --user enable --now mako
