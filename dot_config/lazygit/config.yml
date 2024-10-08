@@ -2,3 +2,6 @@ git:
   paging:
     colorArg: always
     pager: delta --paging=never --line-numbers
+
+gui:
+  showCommandLog: false
