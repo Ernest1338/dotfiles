@@ -11,6 +11,7 @@ sudo pacman -Syyu --noconfirm --needed \
     hyprland \
     hyprlock \
     hyprpicker \
+    hyprpaper \
     git \
     base-devel \
     rustup \
