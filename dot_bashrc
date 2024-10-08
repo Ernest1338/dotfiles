@@ -14,19 +14,20 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
 export GOPATH="$HOME/Programming/GoPath"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
-
+export EDITOR="nvim"
 export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.config/composer/vendor/bin"
 
-export EDITOR="nvim"
+bind '"\C-k": previous-history'
+bind '"\C-j": next-history'
+
 alias vim="nvim"
 alias v="nvim"
 alias vi="nvim --noplugin -u /etc/xdg/nvim/sysinit.vim"
-
 alias cp="cp -i" # confirm before overwriting something
 alias more=less
 alias ls="ls --color=auto"
-alias l="ls --color=auto"
-alias ll="ls -lah --color=auto"
+alias l="ls"
+alias ll="ls -lah"
 alias c="cd"
 alias ip="ip --color=auto"
 alias sudo="sudo " # this makes the aliases work with sudo (for some reason)
