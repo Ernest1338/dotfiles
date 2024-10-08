@@ -6,3 +6,5 @@ git:
 gui:
   showCommandLog: false
   expandFocusedSidePanel: true
+  nerdFontsVersion: "3"
+  showFileIcons: false
