@@ -113,6 +113,10 @@ mkdir ~/Downloads
 mkdir ~/Pictures
 mkdir ~/Videos
 
+# setup wallpaper
+mkdir ~/Pictures/Wallpapers
+wget https://raw.githubusercontent.com/Ernest1338/wallpapers/refs/heads/main/astronaut_jellyfish.jpg -O ~/Pictures/Wallpapers/wallpaper.jpg
+
 # setup screenshots dir
 mkdir -p ~/Pictures/Screenshots
 
