@@ -73,7 +73,8 @@ monitor = HDMI-A-1, 1920x1080@75, 1920x0, 1
 monitor = DP-1, 1440x900@75, 3840x100, 1
 {{- else }}
 monitor = HDMI-A-1, 1920x1080@75, 0x0, 1
-monitor = LVDS-1, 1600x900@60, 1920x360, 1
+monitor = LVDS-1, 1600x900@60, 0x0, 1
+monitor = VGA-1, 1920x1080@60, 1600x0, 2
 {{- end }}
 
 bind = $mod Ctrl, T, exec, $terminal
