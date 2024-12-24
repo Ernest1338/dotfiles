@@ -59,6 +59,9 @@ input {
     numlock_by_default = true
     repeat_delay = 300
     repeat_rate = 40
+{{- if eq $chassisType "desktop" }}
+    sensitivity = -0.2
+{{- end }}
 }
 
 misc {
