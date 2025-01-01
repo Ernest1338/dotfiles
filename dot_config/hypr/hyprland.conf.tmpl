@@ -6,13 +6,14 @@
 $menu = fuzzel
 $mod = ALT
 $screenshot = SCREENSHOT_PATH="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp -w 0)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
-$terminal = foot
+$terminal = footclient
 
 exec-once = xhost + local:
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec-once = waybar
 exec-once = hypridle
 exec-once = swaybg -i ~/Pictures/Wallpapers/wallpaper.jpg
+exec-once = foot --server
 
 # XDG
 env = XDG_SESSION_TYPE,wayland
