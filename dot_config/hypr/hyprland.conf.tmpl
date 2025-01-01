@@ -6,7 +6,7 @@
 $menu = fuzzel
 $mod = ALT
 $screenshot = SCREENSHOT_PATH="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp -w 0)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
-$terminal = alacritty
+$terminal = foot
 
 exec-once = xhost + local:
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
