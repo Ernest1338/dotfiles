@@ -20,6 +20,7 @@ sudo pacman -Syyu --noconfirm --needed \
     cpio \
     lazygit \
     alacritty \
+    foot \
     imv \
     mpv \
     ly \
