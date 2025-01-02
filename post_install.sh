@@ -19,7 +19,6 @@ sudo pacman -Syyu --noconfirm --needed \
     cmake \
     cpio \
     lazygit \
-    alacritty \
     foot \
     imv \
     mpv \
