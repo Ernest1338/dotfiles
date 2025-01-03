@@ -58,11 +58,11 @@
     },
     "clock": {
       "format": "  {:%d/%m     %H:%M}",
-      "on-click": "alacritty -e bash -c 'cal $(date +%Y) -m; read'"
+      "on-click": "footclient -m bash -c 'cal $(date +%Y) -m; read'"
     },
     "cpu": {
       "format": "   {1}%",
-      "on-click": "alacritty -e bash -c 'htop -s PERCENT_CPU'"
+      "on-click": "footclient htop -s PERCENT_CPU"
     },
     "custom/picker": {
       "format": " ",
@@ -74,7 +74,7 @@
     },
     "custom/notes": {
       "format": " ",
-      "on-click": "alacritty --working-directory=$HOME/Repos/notes -e bash -c 'nvim 1.Notes/notes.md'"
+      "on-click": "footclient -D $HOME/Repos/notes nvim 1.Notes/notes.md"
     },
     "hyprland/language": {
       "format": "   {1}",
@@ -91,13 +91,13 @@
     },
     "memory": {
       "format": "   {0}%",
-      "on-click": "alacritty -e bash -c 'htop -s PERCENT_MEM'"
+      "on-click": "footclient htop -s PERCENT_MEM"
     },
     "network": {
       "format-disconnected": "✕",
       "format-ethernet": " ",
       "format-wifi": " ",
-      "on-click": "alacritty -e bash -c 'nmtui'",
+      "on-click": "footclient nmtui",
       "on-click-right": "nmcli dev wifi rescan"
     },
     "power-profiles-daemon": {
