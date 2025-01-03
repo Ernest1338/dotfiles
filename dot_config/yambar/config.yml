@@ -1,4 +1,5 @@
 awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
+std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
 
 bar:
   height: 22
@@ -13,36 +14,53 @@ bar:
 
   left:
     # TODO: highlight active workspaces
-    - label:
+    # - label:
+    #     content:
+    #       string: {text: 1, on-click: "hyprctl dispatch workspace 1", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 2, on-click: "hyprctl dispatch workspace 2", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 3, on-click: "hyprctl dispatch workspace 3", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 4, on-click: "hyprctl dispatch workspace 4", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 5, on-click: "hyprctl dispatch workspace 5", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 6, on-click: "hyprctl dispatch workspace 6", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 7, on-click: "hyprctl dispatch workspace 7", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 8, on-click: "hyprctl dispatch workspace 8", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 9, on-click: "hyprctl dispatch workspace 9", margin: 10}
+    # - label:
+    #     content:
+    #       string: {text: 10, on-click: "hyprctl dispatch workspace 10", margin: 10}
+
+    - i3:
+        anchors:
+          - string: &default {margin: 10, on-click: "swaymsg --quiet workspace {name}", text: "{name}"}
+          - focused: &focused
+              deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
+          - urgent: &urgent
+              foreground: 000000ff
+              deco: {stack: [background: {color: bc2b3fff}, <<: *std_underline]}
         content:
-          string: {text: 1, on-click: "hyprctl dispatch workspace 1", margin: 10}
-    - label:
-        content:
-          string: {text: 2, on-click: "hyprctl dispatch workspace 2", margin: 10}
-    - label:
-        content:
-          string: {text: 3, on-click: "hyprctl dispatch workspace 3", margin: 10}
-    - label:
-        content:
-          string: {text: 4, on-click: "hyprctl dispatch workspace 4", margin: 10}
-    - label:
-        content:
-          string: {text: 5, on-click: "hyprctl dispatch workspace 5", margin: 10}
-    - label:
-        content:
-          string: {text: 6, on-click: "hyprctl dispatch workspace 6", margin: 10}
-    - label:
-        content:
-          string: {text: 7, on-click: "hyprctl dispatch workspace 7", margin: 10}
-    - label:
-        content:
-          string: {text: 8, on-click: "hyprctl dispatch workspace 8", margin: 10}
-    - label:
-        content:
-          string: {text: 9, on-click: "hyprctl dispatch workspace 9", margin: 10}
-    - label:
-        content:
-          string: {text: 10, on-click: "hyprctl dispatch workspace 10", margin: 10}
+          "":
+            map:
+              conditions:
+                state == focused:   {string: {<<: [*default, *focused]}}
+                state == unfocused: {string: {<<: *default}}
+                state == invisible: {string: {<<: *default}}
+                state == urgent:    {string: {<<: [*default, *urgent]}}
 
   right:
     - label:
