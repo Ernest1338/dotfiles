@@ -1,0 +1,164 @@
+awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=13
+
+bar:
+  height: 22
+  location: bottom
+  background: 2b303b40
+  monitor: "DP-1"
+
+  border:
+    top-width: 2
+    color: 3C454Cff
+
+  left:
+    # TODO: highlight active workspaces
+    - label:
+        content:
+          string: {text: 1, on-click: "hyprctl dispatch workspace 1", margin: 10}
+    - label:
+        content:
+          string: {text: 2, on-click: "hyprctl dispatch workspace 2", margin: 10}
+    - label:
+        content:
+          string: {text: 3, on-click: "hyprctl dispatch workspace 3", margin: 10}
+    - label:
+        content:
+          string: {text: 4, on-click: "hyprctl dispatch workspace 4", margin: 10}
+    - label:
+        content:
+          string: {text: 5, on-click: "hyprctl dispatch workspace 5", margin: 10}
+    - label:
+        content:
+          string: {text: 6, on-click: "hyprctl dispatch workspace 6", margin: 10}
+    - label:
+        content:
+          string: {text: 7, on-click: "hyprctl dispatch workspace 7", margin: 10}
+    - label:
+        content:
+          string: {text: 8, on-click: "hyprctl dispatch workspace 8", margin: 10}
+    - label:
+        content:
+          string: {text: 9, on-click: "hyprctl dispatch workspace 9", margin: 10}
+    - label:
+        content:
+          string: {text: 10, on-click: "hyprctl dispatch workspace 10", margin: 10}
+
+  right:
+    - label:
+        content:
+          string:
+            on-click: systemctl suspend && hyprlock --immediate
+            text: 
+            font: *awesome
+            left-margin: 15
+            right-margin: 15
+
+    - label:
+        content:
+          string:
+            on-click: hyprpicker -a
+            text: 
+            font: *awesome
+            left-margin: 15
+            right-margin: 15
+
+    - label:
+        content:
+          string:
+            on-click: footclient -D /home/dvdarch/Repos/notes nvim 1.Notes/notes.md
+            text: 
+            font: *awesome
+            left-margin: 15
+            right-margin: 15
+
+    - network:
+        content:
+          map:
+            default: {empty: {}}
+            conditions:
+              name == wlp3s0 || name == wlp0s20u11:
+                map:
+                  conditions:
+                    ~carrier: {
+                      string: {
+                        text: ✕,
+                        foreground: ff0000cc,
+                        right-margin: 15,
+                        left-margin: 15,
+                        on-click: {
+                          left: "footclient nmtui",
+                          right: "nmcli dev wifi rescan"
+                        }
+                      }
+                    }
+                    carrier:
+                      string: {
+                        text:  ,
+                        right-margin: 15,
+                        left-margin: 15,
+                        on-click: {
+                          left: "footclient nmtui",
+                          right: "nmcli dev wifi rescan"
+                        }
+                      }
+
+    # TODO: show "on/off"
+    - label:
+        content:
+          string:
+            on-click: blueman-manager
+            text:    bt
+            font: *awesome
+            left-margin: 15
+            right-margin: 15
+
+    # TODO
+    # - xkb:
+    #     identifiers: [1:1:AT_Translated_Set_2_keyboard]
+    #     content:
+    #       - string: {text: , font: *awesome}
+    #       - string: {text: "{layout}"}
+
+    - pulse:
+        content:
+          - string: {
+            text: "  {sink_percent}%",
+            right-margin: 15,
+            left-margin: 15,
+            on-click: {
+              # left: "current=$(pactl list sinks | grep 'Active Port:' | grep 'analog' | cut -d' ' -f3)\nif [[ $current == \"analog-output-lineout\" ]]; then\n    pactl set-sink-port 0 analog-output-headphones\nelif [[ $current == \"analog-output-headphones\" ]]; then\n    pactl set-sink-port 0 analog-output-lineout\nfi\n",
+              left: "pavucontrol",
+              right: "pavucontrol",
+              wheel-up: "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+              wheel-down: "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+            }
+          }
+
+    - clock:
+        date-format: "%d/%m"
+        content:
+          - string: {
+            text:  ,
+            left-margin: 10,
+            font: "Font Awesome 6 Free:size=14",
+            on-click: "footclient -m bash -c 'cal $(date +%Y) -m; read'"
+          }
+          - string: {text: "{date}",
+            left-margin: 10,
+            right-margin: 5,
+            font: "Hack:style=bold:size=12",
+            on-click: "footclient -m bash -c 'cal $(date +%Y) -m; read'"
+          }
+          - string: {
+            text:  ,
+            left-margin: 10,
+            font: "Font Awesome 6 Free:size=14",
+            on-click: "footclient -m bash -c 'cal $(date +%Y) -m; read'"
+          }
+          - string: {
+            text: "{time}",
+            left-margin: 5,
+            right-margin: 10,
+            font: "Hack:style=bold:size=12",
+            on-click: "footclient -m bash -c 'cal $(date +%Y) -m; read'"
+          }
