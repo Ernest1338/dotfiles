@@ -48,7 +48,7 @@ bar:
     - label:
         content:
           string:
-            on-click: systemctl suspend && hyprlock --immediate
+            on-click: "bash -c 'systemctl suspend && hyprlock --immediate'"
             text: 
             font: *awesome
             left-margin: 15
