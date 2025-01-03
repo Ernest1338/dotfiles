@@ -5,6 +5,7 @@ bar:
   location: bottom
   background: 2b303b40
   monitor: "DP-1"
+  layer: "overlay"
 
   border:
     top-width: 2
