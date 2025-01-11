@@ -4,54 +4,87 @@ set -euo pipefail
 
 # think of using btrfs and creating a snapshot on every update to achive nixos like system resilience
 
-# install additional packages
-sudo pacman -Syyu --noconfirm --needed \
-    neovim \
+# Update packages and repos
+sudo pacman -Syyu --noconfirm
+
+# -----
+# Tools
+# -----
+sudo pacman -S --noconfirm --needed \
     chezmoi \
+    foot \
+    tmux \
+    fuzzel \
+    bluetui \
+    wget \
+    htop \
+    ncdu \
+    grim \
+    slurp \
+    mako \
+    unzip \
+    thunar \
+    pavucontrol \
+    gnu-netcat
+    # i2c-tools \
+
+# --------
+# Hyprland
+# --------
+sudo pacman -S --noconfirm --needed \
     hyprland \
     hyprlock \
     hyprpicker \
-    swaybg \
+    hypridle \
+    waybar
+    # swaybg \
+
+
+# ----
+# QEMU
+# ----
+sudo pacman -S --noconfirm --needed \
+    qemu-base \
+    qemu-ui-gtk \
+    qemu-hw-display-virtio-gpu \
+    qemu-hw-display-virtio-gpu-gl \
+    qemu-hw-display-virtio-vga \
+    qemu-hw-display-virtio-vga-gl
+
+# -----
+# Media
+# -----
+sudo pacman -S --noconfirm --needed \
+    ffmpeg \
+    imv \
+    mpv
+
+# -----------
+# Programming
+# -----------
+sudo pacman -S --noconfirm --needed \
+    neovim \
+    lazygit \
+    ripgrep \
+    fd \
+    python \
+    python-lsp-server \
+    uv \
+    lua-language-server \
     git \
     base-devel \
     rustup \
     meson \
     cmake \
     cpio \
-    lazygit \
-    foot \
-    imv \
-    mpv \
+    git-delta
+    # python-lsp-black \
+
+# ------
+# Others
+# ------
+sudo pacman -S --noconfirm --needed \
     ly \
-    i2c-tools \
-    wget \
-    htop \
-    ripgrep \
-    fd \
-    ncdu \
-    wl-clipboard \
-    fuzzel \
-    waybar \
-    mako \
-    thunar \
-    grim \
-    slurp \
-    python \
-    python-lsp-server \
-    python-lsp-black \
-    uv \
-    unzip \
-    tmux \
-    qemu-base \
-    qemu-ui-gtk \
-    qemu-hw-display-virtio-gpu \
-    qemu-hw-display-virtio-gpu-gl \
-    qemu-hw-display-virtio-vga \
-    qemu-hw-display-virtio-vga-gl \
-    ffmpeg \
-    lua-language-server \
-    pavucontrol \
-    gnu-netcat \
     xdg-desktop-portal-hyprland \
     ttf-hack \
     ttf-nerd-fonts-symbols \
@@ -59,11 +92,10 @@ sudo pacman -Syyu --noconfirm --needed \
     ttf-nerd-fonts-symbols-mono \
     noto-fonts \
     noto-fonts-emoji \
+    wl-clipboard \
     polkit-gnome \
-    hypridle \
-    fish \
-    delta \
     pacman-contrib
+    # fish \
 
 # setup paru
 wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep x86_64 | head -1) -O /tmp/paru.tar.zst &&
@@ -73,21 +105,21 @@ wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | g
     rm -rf /tmp/paru*
 
 # install packages from AUR
-paru -S --noconfirm --needed brave-bin
+paru -S --noconfirm --needed brave-bin bun-bin
 
 # enable services
 systemctl --user enable --now mako
 sudo systemctl enable ly
 
 # setup rust
-rustup install nightly
+rustup install stable
 rustup component add rust-analyzer
 
 # install neovim config
 git clone https://github.com/Ernest1338/nvim ~/.config/nvim
 
 # setup swapfile (ask for size?)
-sudo mkswap -U clear --size 8G --file /swapfile
+sudo mkswap -U clear --size 20G --file /swapfile
 echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo swapon /swapfile
 
