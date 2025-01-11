@@ -74,10 +74,10 @@ sudo pacman -S --noconfirm --needed \
     git \
     base-devel \
     rustup \
-    meson \
-    cmake \
-    cpio \
     git-delta
+    # meson \
+    # cmake \
+    # cpio \
     # python-lsp-black \
 
 # ------
