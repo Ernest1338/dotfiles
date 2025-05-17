@@ -68,7 +68,6 @@ sudo pacman -S --noconfirm --needed \
     ripgrep \
     fd \
     python \
-    python-lsp-server \
     uv \
     lua-language-server \
     git \
@@ -78,6 +77,8 @@ sudo pacman -S --noconfirm --needed \
     # meson \
     # cmake \
     # cpio \
+    # NOTE: there is the new `ty` lsp
+    # python-lsp-server \
     # python-lsp-black \
 
 # ------

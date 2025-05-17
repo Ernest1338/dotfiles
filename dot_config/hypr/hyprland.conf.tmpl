@@ -6,6 +6,9 @@
 $menu = fuzzel
 $mod = ALT
 $screenshot = SCREENSHOT_PATH="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp -w 0)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
+
+# NOTE: Show fetchrs on each new terminal
+# $terminal = footclient sh -c '~/Programming/CargoTarget/release/fetchrs --fast; bash'
 $terminal = footclient
 
 exec-once = xhost + local:
