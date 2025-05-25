@@ -40,7 +40,7 @@ alias ip="ip --color=auto"
 alias sudo="sudo " # this makes the aliases work with sudo (for some reason)
 alias cachec="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias pyserv="python3 -m http.server 8080"
-alias up="paru; chezmoi update; flatpak update; rustup update"
+alias up="paru; chezmoi update; rustup update"
 alias dots="chezmoi"
 #alias startdocker="sudo systemctl start docker"
 alias alpvm="sudo systemd-nspawn -q -x -D ~/Files/Containers/alpine --background=''";
