@@ -77,9 +77,9 @@ misc {
 }
 
 {{- if eq $chassisType "desktop" }}
-monitor = DVI-D-2, 1920x1080@60, 0x60, 1
-monitor = HDMI-A-1, 1920x1080@75, 1920x0, 1
-monitor = DP-1, 1440x900@75, 3840x100, 1
+# monitor = DVI-D-2, 1920x1080@60, 0x60, 1
+monitor = DP-1, 1440x900@75, 0x50, 1
+monitor = HDMI-A-1, 1920x1080@75, 1440x0, 1
 {{- else }}
 monitor = LVDS-1, 1600x900@60, 0x0, 1
 monitor = HDMI-A-1, 1920x1080@60, 1600x0, 1.5
