@@ -25,7 +25,7 @@ sudo pacman -S --noconfirm --needed \
     unzip \
     thunar \
     pavucontrol \
-    gnu-netcat
+    openbsd-netcat
     # i2c-tools \
 
 # --------
