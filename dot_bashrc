@@ -15,7 +15,7 @@ export CARGO_TARGET_DIR="$HOME/Programming/CargoTarget"
 export GOPATH="$HOME/Programming/GoPath"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 export EDITOR="nvim"
-export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.config/composer/vendor/bin:~/Files/SomeScripts/"
+export PATH="$PATH:~/Repos/nspawn-registry/:~/.local/bin:~/.bun/bin:~/.cache/.bun/bin:~/.config/composer/vendor/bin:~/Files/SomeScripts/"
 
 # Enable vi mode
 set -o vi

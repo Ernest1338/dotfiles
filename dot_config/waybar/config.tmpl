@@ -28,7 +28,7 @@
     "height": 24,
     "position": "bottom",
 {{- if eq $chassisType "desktop" }}
-    "output": [ "DP-1" ],
+    "output": [ "DVI-I-1" ],
     "layer": "overlay",
 {{- else }}
     "output": [ "LVDS-1" ],
@@ -85,9 +85,7 @@
 {{- end }}
     },
     "hyprland/workspaces": {
-      "persistent-workspaces": {
-        "*": 10
-      }
+      "all-outputs": true,
     },
     "memory": {
       "format": "   {0}%",

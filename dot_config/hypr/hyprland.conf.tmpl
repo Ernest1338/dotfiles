@@ -66,7 +66,7 @@ input {
     repeat_delay = 300
     repeat_rate = 40
 {{- if eq $chassisType "desktop" }}
-    sensitivity = -0.2
+    sensitivity = -0.5
 {{- end }}
 }
 
@@ -78,8 +78,15 @@ misc {
 
 {{- if eq $chassisType "desktop" }}
 # monitor = DVI-D-2, 1920x1080@60, 0x60, 1
-monitor = DP-1, 1440x900@75, 0x50, 1
-monitor = HDMI-A-1, 1920x1080@75, 1440x0, 1
+
+# monitor = DP-1, 1440x900@75, 0x50, 1
+# monitor = HDMI-A-1, 1920x1080@75, 1440x0, 1
+
+monitor = DVI-I-1, 1920x1080@60, 0x100, 1
+monitor = DP-1, 2560x1440@120, 1920x0, 1, cm, auto
+render {
+    cm_auto_hdr = 0 # disable HDR on full screen (broken)
+}
 {{- else }}
 monitor = LVDS-1, 1600x900@60, 0x0, 1
 monitor = HDMI-A-1, 1920x1080@60, 1600x0, 1.5
@@ -131,16 +138,16 @@ bind = $mod, 7, workspace, 7
 bind = $mod, 8, workspace, 8
 bind = $mod, 9, workspace, 9
 bind = $mod, 0, workspace, 10
-bind = $mod, KP_End, workspace, 1
-bind = $mod, KP_Down, workspace, 2
-bind = $mod, KP_Next, workspace, 3
-bind = $mod, KP_Left, workspace, 4
-bind = $mod, KP_Begin, workspace, 5
-bind = $mod, KP_Right, workspace, 6
-bind = $mod, KP_Home, workspace, 7
-bind = $mod, KP_Up, workspace, 8
-bind = $mod, KP_Prior, workspace, 9
-bind = $mod, KP_Insert, workspace, 10
+# bind = $mod, KP_End, workspace, 1
+# bind = $mod, KP_Down, workspace, 2
+# bind = $mod, KP_Next, workspace, 3
+# bind = $mod, KP_Left, workspace, 4
+# bind = $mod, KP_Begin, workspace, 5
+# bind = $mod, KP_Right, workspace, 6
+# bind = $mod, KP_Home, workspace, 7
+# bind = $mod, KP_Up, workspace, 8
+# bind = $mod, KP_Prior, workspace, 9
+# bind = $mod, KP_Insert, workspace, 10
 bind = $mod SHIFT, 1, movetoworkspace, 1
 bind = $mod SHIFT, 2, movetoworkspace, 2
 bind = $mod SHIFT, 3, movetoworkspace, 3
@@ -153,22 +160,14 @@ bind = $mod SHIFT, 9, movetoworkspace, 9
 bind = $mod SHIFT, 0, movetoworkspace, 10
 
 {{- if eq $chassisType "desktop" }}
-workspace = 1, monitor:HDMI-A-1,default:true
-workspace = 2, monitor:HDMI-A-1
-workspace = 3, monitor:HDMI-A-1
-workspace = 4, monitor:HDMI-A-1
-workspace = 5, monitor:HDMI-A-1
-workspace = 6, monitor:HDMI-A-1
-workspace = 7, monitor:DP-1,default:true
-workspace = 8, monitor:DP-1
-workspace = 9, monitor:HDMI-A-1
-# workspace = 1, monitor:HDMI-A-1,default:true
-# workspace = 2, monitor:HDMI-A-1
-# workspace = 3, monitor:HDMI-A-1
-# workspace = 4, monitor:HDMI-A-1
-# workspace = 5, monitor:DVI-D-2,default:true
-# workspace = 6, monitor:DVI-D-2
-# workspace = 7, monitor:DVI-D-2
-# workspace = 8, monitor:DP-1,default:true
-# workspace = 9, monitor:DP-1
+workspace = 1, monitor:DP-1, persistent:true, default:true
+workspace = 2, monitor:DP-1, persistent:true
+workspace = 3, monitor:DP-1, persistent:true
+workspace = 4, monitor:DP-1, persistent:true
+workspace = 5, monitor:DP-1, persistent:true
+workspace = 6, monitor:DP-1, persistent:true
+workspace = 7, monitor:DVI-I-1, persistent:true, default:true
+workspace = 8, monitor:DVI-I-1, persistent:true
+workspace = 9, monitor:DVI-I-1, persistent:true
+workspace = 10, monitor:DP-1, persistent:true
 {{- end }}
