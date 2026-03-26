@@ -95,7 +95,9 @@ sudo pacman -S --noconfirm --needed \
     noto-fonts-emoji \
     wl-clipboard \
     polkit-gnome \
-    pacman-contrib
+    pacman-contrib \
+    libwebp \
+    libwebp-utils
     # fish \
 
 # setup paru
