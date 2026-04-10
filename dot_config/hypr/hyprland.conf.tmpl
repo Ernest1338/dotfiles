@@ -7,7 +7,7 @@ $menu = fuzzel
 $mod = ALT
 # $screenshot = SCREENSHOT_PATH="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp -w 0)" "$SCREENSHOT_PATH"; wl-copy < $SCREENSHOT_PATH
 # $screenshot = FILE="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)"; grim -g "$(slurp -w 0)" "$FILE.png" && cwebp -q 80 "$FILE.png" -o "$FILE.webp" && wl-copy -t image/webp < "$FILE.webp" && rm "$FILE.png"
-$screenshot = bash -c 'hyprpicker -rz & PID=$!; sleep 0.2; FILE="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)"; grim -g "$(slurp -w 0)" "$FILE.png"; kill $PID; [ -f "$FILE.png" ] && cwebp -q 80 "$FILE.png" -o "$FILE.webp" && wl-copy -t image/png < "$FILE.png" && rm "$FILE.png"'
+$screenshot = bash -c 'hyprpicker -rz & PID=$!; sleep 0.2; FILE="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)"; GEOM=$(slurp -w 2 -c 00E5FF -b 00000066); sleep 0.1; grim -g "$GEOM" "$FILE.png"; kill $PID; [ -f "$FILE.png" ] && cwebp -q 80 "$FILE.png" -o "$FILE.webp" && wl-copy -t image/png < "$FILE.png" && rm "$FILE.png"'
 
 # NOTE: Show fetchrs on each new terminal
 # $terminal = footclient sh -c '~/Programming/CargoTarget/release/fetchrs --fast; bash'
@@ -26,6 +26,9 @@ exec-once = foot --server
 env = XDG_SESSION_TYPE,wayland
 env = XDG_CURRENT_DESKTOP,Hyprland
 env = XDG_SESSION_DESKTOP,Hyprland
+
+# Do not use animations for selections (for screenshots)
+layerrule = no_anim on, match:namespace ^(selection)$
 
 animations {
     animation = windows, 1, 8, default, popin 80%
