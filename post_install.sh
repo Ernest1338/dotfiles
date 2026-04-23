@@ -100,15 +100,15 @@ sudo pacman -S --noconfirm --needed \
     libwebp-utils
     # fish \
 
-# setup paru
-wget $(curl -s https://api.github.com/repos/Morganamilo/paru/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep x86_64 | head -1) -O /tmp/paru.tar.zst &&
-    mkdir /tmp/paru-bin &&
-    tar -xvf /tmp/paru.tar.zst -C /tmp/paru-bin &&
-    /tmp/paru-bin/paru -Syy --noconfirm paru-bin &&
-    rm -rf /tmp/paru*
+# setup yay
+wget $(curl -s https://api.github.com/repos/Jguer/yay/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep x86_64 | head -1) -O /tmp/yay.tar.gz &&
+    mkdir /tmp/yay-bin &&
+    tar -xzvf /tmp/yay.tar.gz -C /tmp/yay-bin &&
+    /tmp/yay-bin/yay*/yay -Syy --noconfirm yay-bin &&
+    rm -rf /tmp/yay*
 
 # install packages from AUR
-paru -S --noconfirm --needed brave-bin bun-bin
+yay -S --noconfirm --needed brave-bin bun-bin
 
 # enable services
 systemctl --user enable --now mako
@@ -159,7 +159,7 @@ mkdir -p ~/Pictures/Screenshots
 read -p "Are you want to apply laptop settings? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    paru -S --noconfirm brightnessctl tlp
+    yay -S --noconfirm brightnessctl tlp
     sudo systemctl enable --now tlp
     # write tlp config > /etc/tlp.conf
     echo "
